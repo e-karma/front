@@ -1,0 +1,715 @@
+Level 1
+
+Inputs
+
+//////////////////////////////////////////
+Text = TextField; hintText, menuItems={arbitraryArrayMenuItems}, defaultValue, value, underlineStyle, onChange underlineFocusStyle, valueLink, multiLine, errorText,
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+Select = SelectField; valueLink, floatingLabelText, valueMember, displayMember, menuItems
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+Buttons
+//////////////////////////////////////////
+      //Flat Buttons
+      <FlatButton label="Default" />
+      <FlatButton label="Primary" primary={true} />
+      <FlatButton label="Secondary" secondary={true} />
+      <div style={styles.container}>
+        <FlatButton primary={true} label="Choose an Image">
+          <input type="file" id="imageButton" style={styles.exampleImageInput}></input>
+        </FlatButton>
+      </div>
+      <div style={styles.container}>
+        <FlatButton linkButton={true} href="https://github.com/callemall/material-ui" secondary={true} label="GitHub">
+          <FontIcon style={styles.exampleFlatButtonIcon} className="muidocs-icon-custom-github"/>
+        </FlatButton>
+      </div>
+      <FlatButton label="Disabled" disabled={true} />
+
+//////////////////////////////////////////
+Cards => onExpandChange, showExpandableButton, expandable, initiallyExpanded,
+//////////////////////////////////////////
+
+          <Card>
+            <CardHeader
+              title="Title"
+              subtitle="Subtitle"
+              avatar={<Avatar>A</Avatar>}/>
+            <CardHeader
+              title="Demo Url Based Avatar"
+              subtitle="Subtitle"
+              avatar="http://lorempixel.com/100/100/nature/"/>
+            <CardMedia overlay={<CardTitle title="Title" subtitle="Subtitle"/>}>
+              <img src="http://lorempixel.com/600/337/nature/"/>
+            </CardMedia>
+            <CardTitle title="Title" subtitle="Subtitle"/>
+            <CardActions>
+              <FlatButton label="Action1"/>
+              <FlatButton label="Action2"/>
+            </CardActions>
+            <CardText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+              Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+              Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            </CardText>
+          </Card>
+
+          <Card initiallyExpanded={true}>
+            <CardHeader
+              title="Title"
+              subtitle="Subtitle"
+              avatar={<Avatar style={{color:'red'}}>A</Avatar>}
+              showExpandableButton={true}>
+            </CardHeader>
+            <CardText expandable={true}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+              Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+              Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            </CardText>
+            <CardActions expandable={true}>
+              <FlatButton label="Action1"/>
+              <FlatButton label="Action2"/>
+            </CardActions>
+            <CardText expandable={true}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+              Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+              Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            </CardText>
+          </Card>
+
+//////////////////////////////////////////
+Icons => SvgIcon, path, ActionHome color, hoverColor
+//////////////////////////////////////////
+
+        <FontIcon className="muidocs-icon-action-home" />
+        <FontIcon className="muidocs-icon-action-home" color={Colors.red500} />
+        <FontIcon className="muidocs-icon-action-home" color={Colors.yellow500} />
+        <FontIcon className="muidocs-icon-action-home" color={Colors.blue500} />
+
+        <FontIcon className="muidocs-icon-action-home"
+          hoverColor={Colors.greenA200} />
+        <FontIcon className="muidocs-icon-action-home" color={Colors.red500}
+          hoverColor={Colors.greenA200} />
+        <FontIcon className="muidocs-icon-action-home" color={Colors.yellow500}
+          hoverColor={Colors.greenA200} />
+        <FontIcon className="muidocs-icon-action-home" color={Colors.blue500}
+          hoverColor={Colors.greenA200} />
+
+        <FontIcon className="material-icons">home</FontIcon>
+        <FontIcon className="material-icons" color={Colors.red500}>home</FontIcon>
+        <FontIcon className="material-icons" color={Colors.yellow500}>home</FontIcon>
+        <FontIcon className="material-icons" color={Colors.blue500}>home</FontIcon>
+
+        Support Google material icons <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+//////////////////////////////////////////
+hamburger
+X
+Chevron-R
+Chevron-L
+Chevron-Up
+Chevron-Down
+Slider
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+DropDownMenu => displayMember, valueMember, autoWidth (css-instead=false), menuItems, menuItemStyle, selectedIndex, underlineStyle, iconStyle, labelStyle, style, disabled
+//////////////////////////////////////////
+    let menuItems = [
+       { payload: '1', text: 'Never' },
+       { payload: '2', text: 'Every Night' },
+       { payload: '3', text: 'Weeknights' },
+       { payload: '4', text: 'Weekends' },
+       { payload: '5', text: 'Weekly' },
+    ];
+    <DropDownMenu menuItems={menuItems} />
+
+//////////////////////////////////////////
+Icon-Menu => IconButton, ActionGrade =>  iconClassName, tooltip, touch={true}, iconStyle, style, tooltipPosition, tooltipStyles, touch, onBlur, onFocus
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+LeftNav
+//////////////////////////////////////////
+          menuItems = [
+            { route: 'get-started', text: 'Get Started' },
+            { route: 'customization', text: 'Customization' },
+            { route: 'components', text: 'Components' },
+            { type: MenuItem.Types.SUBHEADER, text: 'Resources' },
+            {
+               type: MenuItem.Types.LINK,
+               payload: 'https://github.com/callemall/material-ui',
+               text: 'GitHub'
+            },
+            {
+               text: 'Disabled',
+               disabled: true
+            },
+            {
+               type: MenuItem.Types.LINK,
+               payload: 'https://www.google.com',
+               text: 'Disabled Link',
+               disabled: true
+            },
+          ];
+
+          //Toggle the LeftNav
+          this.refs.leftNav.toggle();
+
+          //Docked Left Nav
+          <LeftNav ref="leftNav" menuItems={menuItems} />
+
+          //Hideable Left Nav
+          <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />
+
+//////////////////////////////////////////
+//////////////////////////////////////////
+LeftNavModal
+//////////////////////////////////////////
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+//////////////////////////////////////////
+List = List, ListItem, ListDivider, insetSubheader, subheader, subheaderStyle, ListItem Props => autoGenerateNestedIndicator, insetChildren, leftAvatar, leftCheckbox, leftIcon, nestedItems, nestedLevel, initiallyOpen, primaryText, rightAvatar, rightIcon, rightIconButton, rightToggle, secondaryText, secondaryTextLines, ListItem Events onKeyboardFocus, onMouseLeave, onMouseEnter, onNestedListToggle, onTouchStart,
+//////////////////////////////////////////
+//////////////////////////////////////////
+      //First Example
+      <List>
+        <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
+        <ListItem primaryText="Starred" leftIcon={<ActionGrade />} />
+        <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} />
+        <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} />
+        <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
+      </List>
+      <ListDivider />
+      <List>
+        <ListItem primaryText="All mail" rightIcon={<ActionInfo />} />
+        <ListItem primaryText="Trash" rightIcon={<ActionInfo />} />
+        <ListItem primaryText="Spam" rightIcon={<ActionInfo />} />
+        <ListItem primaryText="Follow up" rightIcon={<ActionInfo />} />
+      </List>
+
+      //Last Example
+      <List subheader="Today">
+        <ListItem
+          leftAvatar={<Avatar src="images/ok-128.jpg" />}
+          rightIconButton={rightIconMenu}
+          primaryText="Brendan Lim"
+          secondaryText={
+            <p>
+              <span style={{color: Colors.darkBlack}}>Brunch this weekend?</span><br/>
+              I&apos;ll be in your neighborhood doing errands this weekend. Do you want to grab brunch?
+            </p>
+          }
+          secondaryTextLines={2} />
+        <ListDivider inset={true} />
+        <ListItem
+          leftAvatar={<Avatar src="images/kolage-128.jpg" />}
+          rightIconButton={rightIconMenu}
+          primaryText="me, Scott, Jennifer"
+          secondaryText={
+            <p>
+              <span style={{color: Colors.darkBlack}}>Summer BBQ</span><br/>
+              Wish I could come, but I&apos;m out of town this weekend.
+            </p>
+          }
+          secondaryTextLines={2} />
+        <ListDivider inset={true} />
+        <ListItem
+          leftAvatar={<Avatar src="images/uxceo-128.jpg" />}
+          rightIconButton={rightIconMenu}
+          primaryText="Grace Ng"
+          secondaryText={
+            <p>
+              <span style={{color: Colors.darkBlack}}>Oui oui</span><br/>
+              Do you have any Paris recs? Have you ever been?
+            </p>
+          }
+          secondaryTextLines={2} />
+        <ListDivider inset={true} />
+        <ListItem
+          leftAvatar={<Avatar src="images/kerem-128.jpg" />}
+          rightIconButton={rightIconMenu}
+          primaryText="Kerem Suer"
+          secondaryText={
+            <p>
+              <span style={{color: Colors.darkBlack}}>Birthday gift</span><br/>
+              Do you have any ideas what we can get Heidi for her birthday? How about a pony?
+            </p>
+          }
+          secondaryTextLines={2} />
+        <ListDivider inset={true} />
+        <ListItem
+          leftAvatar={<Avatar src="images/raquelromanp-128.jpg" />}
+          rightIconButton={rightIconMenu}
+          primaryText="Raquel Parrado"
+          secondaryText={
+            <p>
+              <span style={{color: Colors.darkBlack}}>Recipe to try</span><br/>
+              We should eat this: grated squash. Corn and tomatillo tacos.
+            </p>
+          }
+          secondaryTextLines={2} />
+      </List>
+
+      // Nested List Items
+      <List subheader="Nested List Items">
+        <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} />
+        <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} />
+        <ListItem
+          primaryText="Inbox"
+          leftIcon={<ContentInbox />}
+          initiallyOpen={true}
+          nestedItems={[
+            <ListItem primaryText="Starred" leftIcon={<ActionGrade />} />,
+            <ListItem
+              primaryText="Sent Mail"
+              leftIcon={<ContentSend />}
+              nestedItems={[
+                <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} />,
+              ]}
+            />,
+          ]}
+        />
+      </List>
+
+List-Email
+List-Chat
+List-Contacts
+List-Mobile-Contacts
+List-Files-Folders
+List-Nested-Email
+
+
+//////////////////////////////////////////
+//////////////////////////////////////////
+Z-depth
+//////////////////////////////////////////
+//////////////////////////////////////////
+        //Rounded Corners
+        <Paper zDepth={1}>
+          <p>zDepth=1</p>
+        </Paper>
+        <Paper zDepth={2}>
+          <p>zDepth=2</p>
+        </Paper>
+        <Paper zDepth={3}>
+          <p>zDepth=3</p>
+        </Paper>
+        <Paper zDepth={4}>
+          <p>zDepth=4</p>
+        </Paper>
+        <Paper zDepth={5}>
+          <p>zDepth=5</p>
+        </Paper>
+        //Sharp Corners
+        <Paper zDepth={1} rounded={false}>
+          <p>rounded=false</p>
+        </Paper>
+        <Paper zDepth={2} rounded={false}>
+          <p>rounded=false</p>
+        </Paper>
+        <Paper zDepth={3} rounded={false}>
+          <p>rounded=false</p>
+        </Paper>
+        <Paper zDepth={4} rounded={false}>
+          <p>rounded=false</p>
+        </Paper>
+        <Paper zDepth={5} rounded={false}>
+          <p>rounded=false</p>
+        </Paper>
+        //Circular
+        <Paper zDepth={1} circle={true}>
+          <p>circle=true</p>
+        </Paper>
+        <Paper zDepth={2} circle={true}>
+          <p>circle=true</p>
+        </Paper>
+        <Paper zDepth={3} circle={true}>
+          <p>circle=true</p>
+        </Paper>
+        <Paper zDepth={4} circle={true}>
+          <p>circle=true</p>
+        </Paper>
+        <Paper zDepth={5} circle={true}>
+          <p>circle=true</p>
+        </Paper>
+
+//////////////////////////////////////////
+Sliders = Slider
+//////////////////////////////////////////
+      //Default
+      <Slider name="slider1" />
+      // With starting value
+      <Slider name="slider2" defaultValue={0.5} step={0.10} />
+      <Slider name="slider3" defaultValue={1} />
+      // Disabled with fixed value
+      <Slider name="slider1" disabled={true} />
+      <Slider name="slider2" disabled={true} value={0.5} />
+      <Slider name="slider3" disabled={true} value={1} />
+
+
+//////////////////////////////////////////
+Switches = Toggle
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+RadioButtonGroup + RadioButton; => value, label, style, disabled
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+Date-Input
+//////////////////////////////////////////
+
+      //Portrait Dialog
+      <DatePicker hintText="Portrait Dialog" />
+      //Landscape Dialog
+      <DatePicker
+        hintText="Landscape Dialog"
+        mode="landscape"/>
+      //Controlled Input
+      <DatePicker
+        hintText="Controlled Date Input"
+        value={this.state.controlledDate}
+        onChange={this._handleChange} />
+      //Ranged Date Picker
+      <DatePicker
+        hintText="Ranged Date Picker"
+        autoOk={this.state.autoOk}
+        minDate={this.state.minDate}
+        maxDate={this.state.maxDate}
+        showYearSelector={this.state.showYearSelector} />
+
+
+//////////////////////////////////////////
+Time-Picker
+//////////////////////////////////////////
+
+      //The 12hr format
+      <TimePicker
+        format="ampm"
+        hintText="12hr Format" />
+
+      //The 24hr format
+      <TimePicker
+        format="24hr"
+        hintText="24hr Format" />
+
+
+//////////////////////////////////////////
+Avatar
+//////////////////////////////////////////
+      //image avatar
+      <Avatar src="images/uxceo-128.jpg" />
+
+      //SvgIcon avatar
+      <Avatar icon={<FileFolder />} />
+
+      //SvgIcon avatar with custom colors
+      <Avatar
+        icon={<FileFolder />}
+        color={Colors.orange200}
+        backgroundColor={Colors.pink400} />
+
+      //FontIcon avatar
+      <Avatar
+        icon={
+          <FontIcon className="muidocs-icon-communication-voicemail" />
+        } />
+
+      //FontIcon avatar with custom colors
+      <Avatar
+        icon={<FontIcon className="muidocs-icon-communication-voicemail" />}
+        color={Colors.blue300}
+        backgroundColor={Colors.indigo900} />
+
+      //Letter avatar
+      <Avatar>A</Avatar>
+
+      //Letter avatar with custom colors
+      <Avatar
+        color={Colors.deepOrange300}
+        backgroundColor={Colors.purple500}>
+      </Avatar>
+
+//////////////////////////////////////////
+AppBar
+//////////////////////////////////////////
+    <AppBar
+      title="Title"
+      iconClassNameRight="muidocs-icon-navigation-expand-more" />
+
+    <AppBar
+      title="Title"
+      iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+      iconElementRight={<FlatButton label="Save" />} />;
+
+//////////////////////////////////////////
+Snackbar
+//////////////////////////////////////////
+      <Snackbar
+        message="Event added to your calendar"
+        action="undo"
+        autoHideDuration={this.state.autoHideDuration}
+        onActionTouchTap={this._handleAction}/>
+      //Somewhere in our code
+      _handleAction() {
+        //We can add more code to this function, but for now we\ll just include an alert.
+        alert("We removed the event from your calendar.");
+      };
+
+//////////////////////////////////////////
+Switches => Checkbox => name, value, label, defaultChecked, checkedIcon, unCheckedIcon={<ToggleStarBorder />}
+//////////////////////////////////////////
+      <Checkbox
+        name="checkboxName1"
+        value="checkboxValue1"
+        label="went for a run today"/>
+
+      <Checkbox
+        name="checkboxName2"
+        value="checkboxValue2"
+        label="fed the dog"
+        defaultChecked={true}/>
+
+      <Checkbox
+        name="checkboxName3"
+        value="checkboxValue3"
+        label="built a house on the moon"
+        disabled={true}/>
+
+      <Checkbox
+        name="checkboxName4"
+        value="checkboxValue4"
+        checkedIcon={<ToggleStar />}
+        unCheckedIcon={<ToggleStarBorder />}
+        label="custom icon" />
+
+//////////////////////////////////////////
+Table; => fixedHeader, fixedFooter, stripedRows, shwoRowHover, selectable, multiSelectable, enableSelectAll, deselectOnClickaway, height;
+//////////////////////////////////////////
+        // State
+        this.state = {
+          fixedHeader: true,
+          fixedFooter: true,
+          stripedRows: false,
+          showRowHover: false,
+          selectable: true,
+          multiSelectable: false,
+          enableSelectAll: false,
+          deselectOnClickaway: true,
+          height: '300px',
+        };
+        <Table
+          height={this.state.height}
+          fixedHeader={this.state.fixedHeader}
+          fixedFooter={this.state.fixedFooter}
+          selectable={this.state.selectable}
+          multiSelectable={this.state.multiSelectable}
+          onRowSelection={this._onRowSelection}>
+          <TableHeader enableSelectAll={this.state.enableSelectAll}>
+            <TableRow>
+              <TableHeaderColumn colSpan="3" tooltip='Super Header' style={{textAlign: 'center'}}>
+                Super Header
+              </TableHeaderColumn>
+            </TableRow>
+            <TableRow>
+              <TableHeaderColumn tooltip='The ID'>ID</TableHeaderColumn>
+              <TableHeaderColumn tooltip='The Name'>Name</TableHeaderColumn>
+              <TableHeaderColumn tooltip='The Status'>Status</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
+          <TableBody
+            deselectOnClickaway={this.state.deselectOnClickaway}
+            showRowHover={this.state.showRowHover}
+            stripedRows={this.state.stripedRows}>
+          <TableRow selected={true}>
+              <TableRowColumn>1</TableRowColumn>
+              <TableRowColumn>John Smith</TableRowColumn>
+              <TableRowColumn>Employed</TableRowColumn>
+            </TableRow>
+            <TableRow>
+              <TableRowColumn>2</TableRowColumn>
+              <TableRowColumn>Randal White</TableRowColumn>
+              <TableRowColumn>Unemployed</TableRowColumn>
+            </TableRow>
+            <TableRow selected={true}>
+              <TableRowColumn>3</TableRowColumn>
+              <TableRowColumn>Stephanie Sanders</TableRowColumn>
+              <TableRowColumn>Employed</TableRowColumn>
+            </TableRow>
+            <TableRow>
+              <TableRowColumn>4</TableRowColumn>
+              <TableRowColumn>Steve Brown</TableRowColumn>
+              <TableRowColumn>Employed</TableRowColumn>
+            </TableRow>
+            <TableRow>
+              <TableRowColumn>5</TableRowColumn>
+              <TableRowColumn>Joyce Whitten</TableRowColumn>
+              <TableRowColumn>Employed</TableRowColumn>
+            </TableRow>
+            <TableRow>
+              <TableRowColumn>6</TableRowColumn>
+              <TableRowColumn>Samuel Roberts</TableRowColumn>
+              <TableRowColumn>Unemployed</TableRowColumn>
+            </TableRow>
+            <TableRow>
+              <TableRowColumn>7</TableRowColumn>
+              <TableRowColumn>Adam Moore</TableRowColumn>
+              <TableRowColumn>Employed</TableRowColumn>
+            </TableRow>
+          </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableRowColumn>ID</TableRowColumn>
+              <TableRowColumn>Name</TableRowColumn>
+              <TableRowColumn>Status</TableRowColumn>
+            </TableRow>
+            <TableRow>
+              <TableRowColumn colSpan="3" style={{textAlign: 'center'}}>
+                Super Footer
+              </TableRowColumn>
+            </TableRow>
+          </TableFooter>
+        </Table>
+
+//////////////////////////////////////////
+Tabs + Tab; => label, route, onActive={this._handleTabActive} />
+//////////////////////////////////////////
+        //Uncontrolled Tabs
+        <Tabs>
+          <Tab label="Item One" >
+            (Tab content...)
+          </Tab>
+          <Tab label="Item Two" >
+            (Tab content...)
+          </Tab>
+          <Tab
+            label="Item Three"
+            route="home"
+            onActive={this._handleTabActive} />
+        </Tabs>
+
+        <IconButton
+          onClick={this._handleButtonClick.bind(this)}
+          iconClassName="material-icons">
+          home
+        </IconButton>
+
+        //Controlled Tabs using valueLink (passing value and onChange props works too!)
+        <Tabs
+          valueLink={{value: this.state.tabsValue, requestChange: this._handleTabsChange.bind(this)}}>
+          <Tab label="Tab A" value="a" >
+            (Tab content...)
+          </Tab>
+          <Tab label="Tab B" value="b">
+            (Tab content...)
+          </Tab>
+        </Tabs>
+
+//////////////////////////////////////////
+Navigation-Menu
+Vertical-Menu
+Multi-Step-Wizard
+Item-Box-Container
+Item-Box-Action
+Item-Box-Expandable
+Toolbar => Toolbar, ToolbarGroup,
+ItemBox
+Media
+//////////////////////////////////////////
+
+//////////////////////////////////////////
+Drop-Down-Menu => Menu + MenuItem + MenuDivider =>
+//////////////////////////////////////////
+        //We're working on migrating some of our components to use a new implementation of menus.
+        //If you'd like to use the new menu before our migration is complete, please directly
+        //require them like this:
+
+        let Menu = require('material-ui/lib/menus/menu');
+        let MenuItem = require('material-ui/lib/menus/menu-item');
+        let MenuDivider = require('material-ui/lib/menus/menu-divider');
+
+        <Menu>
+          <MenuItem primaryText="Maps" />
+          <MenuItem primaryText="Books" />
+          <MenuItem primaryText="Flights" />
+          <MenuItem primaryText="Apps" />
+        </Menu>
+
+        <Menu desktop={true} width={320}>
+          <MenuItem primaryText="Bold" secondaryText="&#8984;B" />
+          <MenuItem primaryText="Italic" secondaryText="&#8984;I" />
+          <MenuItem primaryText="Underline" secondaryText="&#8984;U" />
+          <MenuItem primaryText="Strikethrough" secondaryText="Alt+Shift+5" />
+          <MenuItem primaryText="Superscript" secondaryText="&#8984;." />
+          <MenuItem primaryText="Subscript" secondaryText="&#8984;," />
+          <MenuDivider />
+          <MenuItem primaryText="Paragraph styles" rightIcon={<ArrowDropRight />} />
+          <MenuItem primaryText="Align" rightIcon={<ArrowDropRight />} />
+          <MenuItem primaryText="Line spacing" rightIcon={<ArrowDropRight />} />
+          <MenuItem primaryText="Numbered list" rightIcon={<ArrowDropRight />} />
+          <MenuItem primaryText="List options" rightIcon={<ArrowDropRight />} />
+          <MenuDivider />
+          <MenuItem primaryText="Clear formatting" secondaryText="&#8984;/" />
+        </Menu>
+//////////////////////////////////////////
+Modals
+//////////////////////////////////////////
+        //Standard Actions
+        let standardActions = [
+          { text: 'Cancel' },
+          { text: 'Submit', onTouchTap: this._onDialogSubmit, ref: 'submit' }
+        ];
+
+        <Dialog
+          title="Dialog With Standard Actions"
+          actions={standardActions}
+          actionFocus="submit"
+          modal={this.state.modal}>
+          The actions in this window are created from the json that's passed in.
+        </Dialog>
+
+        //Custom Actions
+        let customActions = [
+          <FlatButton
+            label="Cancel"
+            secondary={true}
+            onTouchTap={this._handleCustomDialogCancel} />,
+          <FlatButton
+            label="Submit"
+            primary={true}
+            onTouchTap={this._handleCustomDialogSubmit} />
+        ];
+
+        <Dialog
+          title="Dialog With Custom Actions"
+          actions={customActions}
+          modal={this.state.modal}>
+          The actions in this window were passed in as an array of react objects.
+        </Dialog>
+
+        <Dialog title="Dialog With Scrollable Content" actions={customActions}
+          autoDetectWindowHeight={true} autoScrollBodyContent={true}>
+            <div style={{height: '2000px'}}>Really long content</div>
+        </Dialog>
+
+//////////////////////////////////////////
+Progress Bar = LinearProgress, CircularProgress => mode, value, max, min, size
+//////////////////////////////////////////
+      //Linear
+      <LinearProgress mode="determinate" value={60} />
+      <LinearProgress mode="indeterminate"  />
+      //Circular
+      <CircularProgress mode="determinate" value={60} />
+      <CircularProgress mode="determinate" value={60} size={1.5} />
+      <CircularProgress mode="determinate" value={60} size={2} />
+      <CircularProgress mode="indeterminate" />
+      <CircularProgress mode="indeterminate" size={1.5} />
+      <CircularProgress mode="indeterminate" size={2} />
